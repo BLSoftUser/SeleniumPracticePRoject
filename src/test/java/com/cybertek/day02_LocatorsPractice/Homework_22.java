@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Homework_2 {
+public class Homework_22 {
     public static void main(String[] args) {
         //1. open chrome and navigate to http://zero.webappsecurity.com/
         WebDriverManager.chromedriver().setup();
