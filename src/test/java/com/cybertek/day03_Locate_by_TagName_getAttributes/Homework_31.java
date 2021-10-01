@@ -28,18 +28,19 @@ public class Homework_31 {
         WebElement loginBtn = driver.findElement(By.id("login-button"));
         loginBtn.submit();
     //6. Get name and price of the first product
-        WebElement firstProduct = driver.findElement(By.className("inventory_item_name"));
-        System.out.println("firstProduct.getText() = " + firstProduct.getText());
+        WebElement firstProduct = driver.findElement(By.linkText("Sauce Labs Backpack"));
+        System.out.println("firstProduct.getAttribute(\"id\") = " + firstProduct.getAttribute("id"));
         WebElement firstProductPrice = driver.findElement(By.className("inventory_item_price"));
         System.out.println("firstProductPrice.getText() = " + firstProductPrice.getText());
         System.out.println("--------------------------------------------------------------------------");
     //7. Get all product names into List<WebElement>
-        List<WebElement> allProductsName = driver.findElements(By.className("inventory_item"));
+        List<WebElement> allProductsTitle = driver.findElements(By.className("inventory_item_name"));
     //8. Get the product count
-        System.out.println("allProductsName.size() = " + allProductsName.size());
+        System.out.println("allProductsTitle.size() = " + allProductsTitle.size());
     //9. print out the text of all products
-        for (WebElement eachProductName : allProductsName ) {
-            System.out.println(">>>>> eachProductName.getText() = " + eachProductName.getText());        }
+        for (WebElement eachProductTitle : allProductsTitle ) {
+            String productTitleText = eachProductTitle.getText();
+            System.out.println(">>>>> eachProductTitle.getText() = " + productTitleText);        }
     // 10. Click on the shopping cart link
         WebElement cartLnk = driver.findElement(By.className("shopping_cart_link"));
         cartLnk.click();
