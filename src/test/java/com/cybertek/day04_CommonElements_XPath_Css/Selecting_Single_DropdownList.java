@@ -19,16 +19,16 @@ public class Selecting_Single_DropdownList {
         WebElement yearDropD = driver.findElement(By.id("year"));   //identify element
         Select yearSelectObj = new Select(yearDropD);               //
         //2.1. select item with: index, value, visible text.
-            // yearSelectObj.selectByIndex(2);             //select item with index 2
-            // yearSelectObj.selectByValue("1981");        //select item with value "1981"
+            yearSelectObj.selectByIndex(2);             //select item with index 2
+            yearSelectObj.selectByValue("1981");        //select item with value "1981"
             yearSelectObj.selectByVisibleText("1977");  //select item with visible text "1977"
 
     //3. identify dropDown List Year and start create selector for it
         WebElement monthDropD = driver.findElement(By.id("month"));
         Select monthSelectObj = new Select(monthDropD);
         //3.1 select item with: index, value, visible text.
-            // monthSelectObj.selectByIndex(5);
-            // monthSelectObj.selectByValue("10");
+            monthSelectObj.selectByIndex(5);
+            monthSelectObj.selectByValue("10");
             monthSelectObj.selectByVisibleText("March");
 
     //4. identify dropDown List Year and start create selector for it
