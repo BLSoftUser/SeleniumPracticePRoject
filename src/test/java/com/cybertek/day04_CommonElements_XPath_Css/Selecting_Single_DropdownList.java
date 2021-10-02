@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class Selecting_DropdownList {
+public class Selecting_Single_DropdownList {
     public static void main(String[] args) {
     //1. setup driver and navigate to...
         WebDriverManager.chromedriver().setup();
@@ -39,6 +39,6 @@ public class Selecting_DropdownList {
             // daySelectObj.selectByValue("5");
             daySelectObj.selectByVisibleText("6");
 
-        //driver.quit();
+        driver.quit();
     }
 }
