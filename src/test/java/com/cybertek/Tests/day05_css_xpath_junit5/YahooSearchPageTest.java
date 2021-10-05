@@ -9,59 +9,42 @@ package com.cybertek.Tests.day05_css_xpath_junit5;
     import static org.junit.jupiter.api.Assertions.*;
 
 public class YahooSearchPageTest {
-    //1. Declare driver
-    WebDriver driver;
-
-    @BeforeAll
-    public static void setupWebDriverManager(){
+    WebDriver driver;     //1. Declare driver
+    @BeforeAll    public static void setupWebDriverManager(){
         WebDriverManager.chromedriver().setup();    }
-    @BeforeEach
-    public void setupDriver(){
+
+    @BeforeEach    public void setupDriver(){
         driver = new ChromeDriver();
         driver.manage().window().maximize();    }
-    @AfterEach
-    public void closingBrowser(){
+
+    @AfterEach    public void closingBrowser(){
         driver.quit();    }
-    @AfterAll
-    public static void compleateInfo(){
-        System.out.println("All Tests() are completed!");
-    }
 
+    @AfterAll    public static void compleateInfo(){
+        System.out.println("All Tests() are completed!");    }
 
-    @Test
-    public  void testYahooSearchHomePageTitle(){
-            /*     1.
+    @Test    public  void testYahooSearchHomePageTitle(){    /*     1.
         testYahooSearchHomePageTitle()
         test when you navigate to yahoo search page
         the title should be "Yahoo Search - Web Search"
             */
-    //1. setup chrome driver and navigate
         driver.get("https://search.yahoo.com/");
-    //2. declare two Strings
-        String expectedTitle = "Yahoo Search - Web Search";
-        String actualTitle = driver.getTitle();
-    //3. compare if two Strings are equal:
-        assertEquals(expectedTitle, actualTitle); // import static for all assert methods
+            String expectedTitle = "Yahoo Search - Web Search"; // declare two Strings
+            String actualTitle = driver.getTitle();
+        assertEquals(expectedTitle, actualTitle); // compare if two Strings are equal. import static for all assert methods
     }
 
-    @Test
-    public void testYahooSearchResultPageTitle(){
-            /*     2.
+    @Test    public void testYahooSearchResultPageTitle(){   /*     2.
         test method name : testYahooSearchResultPageTitle
         test navigate to yahoo page
         and search for Selenium
         the page title should start with selenium
             */
-    //1. setup chrome driver and navigate
         driver.get("https://search.yahoo.com/");
-    //2. identify "searchBox", input "Selenium", hit "Enter key" on keyboard
-        WebElement searchBX = driver.findElement(By.cssSelector("input[id='yschsp']"));
-        searchBX.sendKeys("Selenium" + Keys.ENTER);
-        // driver.findElement(By.cssSelector("#sf > button > span")).click();
-    //3. the page title should start with selenium
+            WebElement searchBX = driver.findElement(By.cssSelector("input[id='yschsp']"));
+            searchBX.sendKeys("Selenium" + Keys.ENTER); // hit "Enter key" on keyboard
         String expectedTitleStartsWith = "Selenium";
         String actualTitle = driver.getTitle();
-        assertTrue(actualTitle.startsWith("Selenium"));
+        assertTrue(actualTitle.startsWith("Selenium"));    // the page title should start with selenium
     }
-
 }
