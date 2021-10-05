@@ -59,6 +59,7 @@ public class IdentificationElements_RegistrationForm_byXPath {
         //14. signup.click():   //button[@type='submit' and @id='wooden_spoon']
                 driver.findElement(By.xpath("//button[@type='submit' and @id='wooden_spoon']")).click();
         //15.
+        String Title;
         System.out.println("driver.getTitle() = " + driver.getTitle());
         System.out.println("driver.findElement(By.xpath(\"//h4[@class='alert-heading']\")).getText() = "
                 + driver.findElement(By.xpath("//h4[@class='alert-heading']")).getText());
