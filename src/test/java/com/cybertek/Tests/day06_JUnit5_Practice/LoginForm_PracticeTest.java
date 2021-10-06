@@ -5,7 +5,7 @@ package com.cybertek.Tests.day06_JUnit5_Practice;
     import org.openqa.selenium.WebDriver;
     import org.openqa.selenium.WebElement;
     import org.openqa.selenium.chrome.ChromeDriver;
-    import static org.junit.jupiter.api.Assertions.assertTrue;
+    import static org.junit.jupiter.api.Assertions.*;
 public class LoginForm_PracticeTest {
     WebDriver driver;     //1. Declare instance variable
     @BeforeEach     public void setupDriver(){
