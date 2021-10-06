@@ -9,7 +9,7 @@ package com.cybertek.Tests.day05_css_xpath_junit5;
     import static org.junit.jupiter.api.Assertions.*;
 
 public class YahooSearchPageTest {
-    WebDriver driver;     //1. Declare driver
+    WebDriver driver;     //1. Declare instance variable
     @BeforeAll    public static void setupWebDriverManager(){
         WebDriverManager.chromedriver().setup();    }
 
