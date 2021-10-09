@@ -8,18 +8,29 @@ package com.cybertek.Tests.day06_JUnit5_Practice;
     import org.openqa.selenium.WebElement;
     import org.openqa.selenium.chrome.ChromeDriver;
     import static org.junit.jupiter.api.Assertions.*;
+
 public class isDisplayed_PracticeTest {
-    WebDriver driver;     //1. Declare instance variable
+
+    //-----------------------------------------------------------------------------------------------
+
+    //1.
+    WebDriver driver;     //1. Declare driver
+
+    //2.
     @BeforeEach
     public void setupDriver(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
+
+    //3.
     @AfterEach
     public void closingBrowser(){
         driver.quit();
     }
+
+    //-----------------------------------------------------------------------------------------------
 
     @Test   public void testErrorMessage(){
         //1. navigate to
