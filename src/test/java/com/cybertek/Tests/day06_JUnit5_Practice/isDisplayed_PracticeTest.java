@@ -10,12 +10,16 @@ package com.cybertek.Tests.day06_JUnit5_Practice;
     import static org.junit.jupiter.api.Assertions.*;
 public class isDisplayed_PracticeTest {
     WebDriver driver;     //1. Declare instance variable
-    @BeforeEach     public void setupDriver(){
+    @BeforeEach
+    public void setupDriver(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();    }
-    @AfterEach  public void closingBrowser(){
-        driver.quit();    }
+        driver.manage().window().maximize();
+    }
+    @AfterEach
+    public void closingBrowser(){
+        driver.quit();
+    }
 
     @Test   public void testErrorMessage(){
         //1. navigate to
