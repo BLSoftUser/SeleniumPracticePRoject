@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public abstract class TestBase {
     // We will create this class abstract, because it does not has any test
 
@@ -27,8 +29,12 @@ public abstract class TestBase {
         // driver = new ChromeDriver();
         // driver.manage().window().maximize();
 
+    //1. use the preferable browser
         driver = WebDriverFactory.getDriver("chrome");
             // call the driver in the specific browser form WebDriverFactory utilities class
+
+    //2. add implicitly waiting time for 10 sec
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     //3.
