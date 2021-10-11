@@ -29,11 +29,11 @@ public abstract class TestBase {
         // driver = new ChromeDriver();
         // driver.manage().window().maximize();
 
-    //1. use the preferable browser
+    //2.1. use the preferable browser
         driver = WebDriverFactory.getDriver("chrome");
             // call the driver in the specific browser form WebDriverFactory utilities class
 
-    //2. add implicitly waiting time for 10 sec
+    //2.2. add implicitly waiting time for 10 sec
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
