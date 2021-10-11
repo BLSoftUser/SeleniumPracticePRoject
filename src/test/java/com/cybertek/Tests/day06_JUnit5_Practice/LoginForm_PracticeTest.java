@@ -7,13 +7,22 @@ package com.cybertek.Tests.day06_JUnit5_Practice;
     import org.openqa.selenium.chrome.ChromeDriver;
     import static org.junit.jupiter.api.Assertions.*;
 public class LoginForm_PracticeTest {
+
     WebDriver driver;     //1. Declare instance variable
-    @BeforeEach     public void setupDriver(){
+
+    @BeforeEach
+    public void setupDriver(){
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().window().maximize();    }
-    @AfterEach  public void closingBrowser(){   driver.quit();    }
-    @Test   public void testLogin(){
+        driver.manage().window().maximize();
+    }
+
+    @AfterEach
+    public void closingBrowser(){   driver.quit();
+    }
+
+    @Test
+    public void testLogin(){
         driver.get("http://practice.cybertekschool.com/login");
     //1. get the text from the opened page
         WebElement header = driver.findElement(By.xpath("//h2[ .='Login Page' ]"));
