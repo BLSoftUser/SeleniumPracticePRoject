@@ -18,14 +18,17 @@ public abstract class TestBase {
     //-----------------------------------------------------------------------------------------------//
 
     //1.
-    WebDriver driver;     //1. Declare driver
+    public WebDriver driver;     //1. Declare driver and make it Public to have it accessible in another classes
 
     //2.
     @BeforeEach
     public void setupDriver(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        // WebDriverManager.chromedriver().setup();
+        // driver = new ChromeDriver();
+        // driver.manage().window().maximize();
+
+        driver = WebDriverFactory.getDriver("chrome");
+            // call the driver in the specific browser form WebDriverFactory utilities class
     }
 
     //3.
