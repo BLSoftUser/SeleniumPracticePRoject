@@ -19,8 +19,9 @@ public abstract class TestBase {
 
     //-----------------------------------------------------------------------------------------------//
 
-    //1.
-    public WebDriver driver;     //1. Declare driver and make it Public to have it accessible in another classes
+    //1. Declare driver
+    //public WebDriver driver;     //1. make it Public to have it accessible in another classes
+    protected  WebDriver driver;    //1. make it accessible only to subclasses
 
     //2.
     @BeforeEach
