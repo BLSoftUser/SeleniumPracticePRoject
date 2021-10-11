@@ -14,8 +14,11 @@
     </properties>
 
 
+    <!--    ====================== 1. Adding "Dependencies" ===========================     -->
 
     <dependencies>
+
+        <!--    _____________________ 2. Adding "Dependency" _____________________  -->
 
         <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
         <dependency>
