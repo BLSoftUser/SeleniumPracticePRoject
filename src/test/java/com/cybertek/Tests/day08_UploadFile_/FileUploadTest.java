@@ -5,6 +5,7 @@ import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
 public class FileUploadTest extends TestBase {
+
     @Test
     public void testFileUpload(){
         //1. navigate to: http://practice.cybertekschool.com/upload
@@ -18,6 +19,5 @@ public class FileUploadTest extends TestBase {
 
         //4. click() on Submit button
             driver.findElement(By.id("file-submit")).click();
-
     }
 }
