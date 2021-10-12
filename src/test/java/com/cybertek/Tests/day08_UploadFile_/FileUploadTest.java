@@ -1,8 +1,10 @@
 package com.cybertek.Tests.day08_UploadFile_;
 
 import com.cybertek.utilities.TestBase;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class FileUploadTest extends TestBase {
 
@@ -19,5 +21,9 @@ public class FileUploadTest extends TestBase {
 
         //4. click() on Submit button
             driver.findElement(By.id("file-submit")).click();
+
+        //5. assert if the file been uploaded
+            WebElement successMSG = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
+                Assertions.assertTrue( successMSG.isDisplayed() );
     }
 }
