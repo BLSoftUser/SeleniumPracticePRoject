@@ -1,5 +1,6 @@
 package com.cybertek.Tests.day08_UploadFile_;
 
+import com.cybertek.utilities.BrowserUtil;
 import com.cybertek.utilities.TestBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -23,7 +24,9 @@ public class FileUploadTest extends TestBase {
             driver.findElement(By.id("file-submit")).click();
 
         //5. assert if the file been uploaded
-            Thread.sleep(2000);
+            // Thread.sleep(2000);
+            BrowserUtil.waitFor(2);
+
             WebElement successMSG = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
                 Assertions.assertTrue( successMSG.isDisplayed() );
     }
