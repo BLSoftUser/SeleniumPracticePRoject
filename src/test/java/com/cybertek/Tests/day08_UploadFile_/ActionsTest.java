@@ -39,5 +39,13 @@ public class ActionsTest extends TestBase {
             WebElement img2ELM = driver.findElement(By.xpath("(//div[@class='figure']/img)[2]"));
                 action.moveToElement(img2ELM).perform();
                 BrowserUtil.waitFor(5);
+
+        //8. perform these action in this sequence
+                // hover over to 1st image -->> pause 2 second -->> hover over to 2nd image -->> pause 2 second -->>
+                // then hover over to 1st image again -->> pause 2 second -->> then second image -->> pause 2 second
+                // PERFORM THE ACTION!!!
+            action.moveToElement(img1ELM).pause(2000).moveToElement(img2ELM).pause(2000)
+                    .moveToElement(img1ELM).pause(2000).moveToElement(img2ELM).pause(2000).perform();
+
     }
 }
