@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 public class FileUploadTest extends TestBase {
 
     @Test
-    public void testFileUpload(){
+    public void testFileUpload() throws InterruptedException {
         //1. navigate to: http://practice.cybertekschool.com/upload
         driver.get("http://practice.cybertekschool.com/upload");
 
@@ -23,6 +23,7 @@ public class FileUploadTest extends TestBase {
             driver.findElement(By.id("file-submit")).click();
 
         //5. assert if the file been uploaded
+            Thread.sleep(2000);
             WebElement successMSG = driver.findElement(By.xpath("//h3[.='File Uploaded!']"));
                 Assertions.assertTrue( successMSG.isDisplayed() );
     }
