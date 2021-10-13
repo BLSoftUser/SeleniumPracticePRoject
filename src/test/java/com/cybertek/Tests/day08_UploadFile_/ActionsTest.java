@@ -51,7 +51,6 @@ public class ActionsTest extends TestBase {
                     .moveToElement(img1ELM).pause(2000).moveToElement(img2ELM).pause(2000).perform();
 
     }
-
     //---------------------------------------------------------------------------------//
 
     @Test
@@ -72,7 +71,6 @@ public class ActionsTest extends TestBase {
             BrowserUtil.waitFor(3);
             Assertions.assertEquals( "You did great!" , bigCircleELM.getText() );
     }
-
     //---------------------------------------------------------------------------------//
 
     @Test
@@ -97,7 +95,6 @@ public class ActionsTest extends TestBase {
                     .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE).pause(2000)
                     .perform();
     }
-
     //---------------------------------------------------------------------------------//
 
     @Test
@@ -123,7 +120,6 @@ public class ActionsTest extends TestBase {
         //6. TODO: assert if a new String has appeared:
             Assertions.assertTrue( driver.findElement(By.id("demo")).isDisplayed() );
     }
-
     //---------------------------------------------------------------------------------//
 
     @Test
@@ -146,7 +142,6 @@ public class ActionsTest extends TestBase {
             driver.switchTo().alert().accept();
                 BrowserUtil.waitFor(1);
     }
-
     //---------------------------------------------------------------------------------//
 
 }
