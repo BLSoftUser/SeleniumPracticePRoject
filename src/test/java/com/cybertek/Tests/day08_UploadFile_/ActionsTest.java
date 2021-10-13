@@ -5,11 +5,14 @@ import com.cybertek.utilities.TestBase;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 
 public class ActionsTest extends TestBase {
+
+    //---------------------------------------------------------------------------------//
 
     @Test
     public void testHoverOverAction(){
@@ -48,4 +51,54 @@ public class ActionsTest extends TestBase {
                     .moveToElement(img1ELM).pause(2000).moveToElement(img2ELM).pause(2000).perform();
 
     }
+
+    //---------------------------------------------------------------------------------//
+
+    @Test
+    public void testDragAndDrop(){
+        //1. navigate to
+            driver.get("https://demos.telerik.com/kendo-ui/dragdrop/index");
+            BrowserUtil.waitFor(3);
+
+        //2. identify smallCirce and bigCircle
+            WebElement smallCircleELM = driver.findElement(By.id("draggable"));
+            WebElement bigCircleELM = driver.findElement(By.id("droptarget"));
+
+        //3. declare actions and  made an action DragAndDrop smallCircle to bigCircle
+            Actions actions = new Actions(driver);
+            actions.dragAndDrop( smallCircleELM, bigCircleELM).perform(); // smallCircle into the bigCircle
+
+        //4. assert if text is appearing
+            BrowserUtil.waitFor(3);
+            Assertions.assertEquals( "You did great!" , bigCircleELM.getText() );
+    }
+
+    //---------------------------------------------------------------------------------//
+
+    @Test
+    public void testKeyBoardAction() {
+        //1. navigate to https://www.google.com
+            driver.get("https://www.google.com");
+        //2. identify the search box
+            BrowserUtil.waitFor(3);
+            WebElement searchBX = driver.findElement(By.xpath("//input[@name='q' and @type='text']"));
+        //3. create Actions class instance
+            Actions actions = new Actions(driver);
+
+        //4. click on search box and wait for 2 sec
+            actions.click(searchBX).pause(2000).perform();
+
+        //5. hold the SHIFT  and  enter text "i love selenium" >>> YOU SHOULD SEE UPPERCASE
+            actions.keyDown(Keys.SHIFT).sendKeys("i love selenium").pause(2000).perform();
+
+        //6. CTRL "A" and backSpace to delete the text
+            actions
+                    .keyDown(Keys.CONTROL).sendKeys("A").pause(2000)
+                    .keyUp(Keys.CONTROL).sendKeys(Keys.BACK_SPACE).pause(2000)
+                    .perform();
+    }
+
+    //---------------------------------------------------------------------------------//
+
+
 }
