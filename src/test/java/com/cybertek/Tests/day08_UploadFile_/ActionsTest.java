@@ -100,5 +100,53 @@ public class ActionsTest extends TestBase {
 
     //---------------------------------------------------------------------------------//
 
+    @Test
+    public void testDoubleClick(){
+        //1. navigate to:https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ondblclick
+            driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_ondblclick");
+                BrowserUtil.waitFor(2);
+
+        //2. Switch to necessary frame id='iframeResult'
+            driver.switchTo().frame("iframeResult");
+
+        //3. identify the element, that needs to to be double-clicked"
+            WebElement dblClkELM =
+                    driver.findElement(By.xpath("//p[.='Double-click this paragraph to trigger a function.']"));
+
+        //4. create Actions method:
+            Actions actions = new Actions(driver);
+
+        //5. double-click on the element:
+            actions.doubleClick(dblClkELM).perform();
+                BrowserUtil.waitFor(2);
+
+        //6. TODO: assert if a new String has appeared:
+            Assertions.assertTrue( driver.findElement(By.id("demo")).isDisplayed() );
+    }
+
+    //---------------------------------------------------------------------------------//
+
+    @Test
+    public void testRightClick(){
+
+        //1. navigate
+            driver.get("https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_oncontextmenu");
+                BrowserUtil.waitFor(2);
+
+        //2. Switch the frame  and  locate the Yellow area: css selector
+            driver.switchTo().frame("iframeResult");
+            WebElement YellowAreaELM = driver.findElement(By.xpath("//div[@oncontextmenu='myFunction()']"));
+
+        //3. Right-click "contextClick()" on the Yellow area using Actions class
+            Actions actions = new Actions(driver);
+            actions.contextClick(YellowAreaELM).perform();
+                BrowserUtil.waitFor(1);
+
+        //4. close the alert that has showed up after the right-click
+            driver.switchTo().alert().accept();
+                BrowserUtil.waitFor(1);
+    }
+
+    //---------------------------------------------------------------------------------//
 
 }
